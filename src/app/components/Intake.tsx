@@ -1,6 +1,13 @@
 import { useContext, useReducer } from "react";
 import { OrderContext } from "../context";
 
+const toggleMap = {
+  toggle_intake: "displayIntake",
+  toggle_patient_history: "displayPatientHistory",
+  toggle_diagnostic: "displayDiagnostic",
+  toggle_self_care_tips: "displaySelfCareTips",
+};
+
 const reducer = (
   state: {
     displayIntake: boolean;
@@ -10,15 +17,13 @@ const reducer = (
   },
   action: string
 ) => {
-  if (action === "toggle_intake")
-    return { ...state, displayIntake: !state.displayIntake };
-  if (action === "toggle_patient_history")
-    return { ...state, displayPatientHistory: !state.displayPatientHistory };
-  if (action === "toggle_diagnostic")
-    return { ...state, displayDiagnostic: !state.displayDiagnostic };
-  if (action === "toggle_self_care_tips")
-    return { ...state, displaySelfCareTips: !state.displaySelfCareTips };
-  return { ...state };
+  const key = toggleMap[action as keyof typeof toggleMap];
+
+  if (key) {
+    return { ...state, [key]: !state[key as keyof typeof state] };
+  }
+
+  return state;
 };
 
 const Intake = () => {

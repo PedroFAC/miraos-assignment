@@ -55,3 +55,11 @@ export interface Order {
     value?: string
   }
   
+  export interface TreatmentPlan {
+    patientMessage: string;
+    plan: string;
+    visitSummary: string;
+    providerName: string;
+  }
+  
+  

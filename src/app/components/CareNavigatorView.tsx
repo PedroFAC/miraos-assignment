@@ -25,7 +25,9 @@ const CareNavigatorView = () => {
       <Intake />
 
       <div className="d-flex mb-3 mt-3">
-        <button onClick={sendCareOptions} className="btn primary-action">Send Care Options</button>
+        <button onClick={sendCareOptions} className="btn primary-action">
+          Send Care Options
+        </button>
         <button className="btn btn-danger ml-2">Cancel Order</button>
       </div>
       <Chat />

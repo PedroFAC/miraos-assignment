@@ -1,7 +1,22 @@
+import { useContext } from "react";
+import { OrderContext } from "../context";
+
 const Chat = () => {
+  const { treatmentPlan } = useContext(OrderContext);
+  const { plan, providerName } = treatmentPlan;
   return (
     <>
       <div className="message-section">
+        {Object.keys(treatmentPlan).includes('plan') && Object.keys(treatmentPlan).includes('providerName') && (
+          <div className="treatment-message">
+            <p>
+              <strong>Treatment Plan:</strong> {plan}
+            </p>
+            <p>
+              <strong>Provider Name:</strong> {providerName}
+            </p>
+          </div>
+        )}
         <div className="message sent">
           Patient: I have been feeling unwell for the past few days.
         </div>

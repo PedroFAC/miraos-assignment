@@ -3,6 +3,7 @@ import { OrderContext } from "../context";
 import MiraAi from "./MiraAi";
 import Intake from "./Intake";
 import TreatmentPlan from "./TreatmentPlan";
+import Chat from "./Chat";
 
 const ProviderView = () => {
   const { orderData } = useContext(OrderContext)
@@ -15,6 +16,7 @@ const ProviderView = () => {
       <MiraAi />
       <Intake />
       <TreatmentPlan />
+      <Chat />
     </div>
   );    
 };
