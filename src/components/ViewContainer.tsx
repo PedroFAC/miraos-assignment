@@ -1,7 +1,10 @@
 import { useContext } from "react";
-import CareNavigatorView from "./CareNavigatorView";
-import ProviderView from "./ProviderView";
 import { OrderContext } from "../context/OrderContext";
+import ChiefComplaint from "./ChiefComplaint";
+import MiraAi from "./MiraAi";
+import TreatmentPlan from "./TreatmentPlan";
+import Intake from "./Intake";
+import Chat from "./Chat";
 
 const ViewContainer = () => {
   const { view, toggleView } = useContext(OrderContext);
@@ -10,9 +13,7 @@ const ViewContainer = () => {
     <div className="card mt-4">
       <div className="card-header d-flex justify-content-between">
         <span id="toggle-view" className="toggle-view">
-          {view === "provider"
-            ? "Provider View"
-            : "Care Navigator View"}
+          {view === "provider" ? "Provider View" : "Care Navigator View"}
         </span>
         <div>
           <button className="btn btn-secondary" onClick={toggleView}>
@@ -22,7 +23,13 @@ const ViewContainer = () => {
           </button>
         </div>
       </div>
-      {view === "provider" ? <ProviderView /> : <CareNavigatorView />}
+      <div id={`${view}-view`} className="card-body">
+        <ChiefComplaint />
+        {view === "provider" && <MiraAi />}
+        <Intake />
+        {view === "provider" && <TreatmentPlan />}
+        <Chat />
+      </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { useContext, useReducer } from "react";
 import { OrderContext } from "../context/OrderContext";
+import { createReducer } from "@/utils";
 
 const toggleMap = {
   toggle_intake: "displayIntake",
@@ -8,23 +9,7 @@ const toggleMap = {
   toggle_self_care_tips: "displaySelfCareTips",
 };
 
-const reducer = (
-  state: {
-    displayIntake: boolean;
-    displayPatientHistory: boolean;
-    displayDiagnostic: boolean;
-    displaySelfCareTips: boolean;
-  },
-  action: string
-) => {
-  const key = toggleMap[action as keyof typeof toggleMap];
-
-  if (key) {
-    return { ...state, [key]: !state[key as keyof typeof state] };
-  }
-
-  return state;
-};
+const reducer = createReducer(toggleMap);
 
 const Intake = () => {
   const { orderData, view } = useContext(OrderContext);
@@ -43,6 +28,10 @@ const Intake = () => {
     displayIntake: false,
     displayPatientHistory: false,
   });
+
+  const sendCareOptions = () => {
+    alert("Care options: In-person clinic, virtual care, labs, navigation.");
+  };
 
   return (
     <>
@@ -98,6 +87,14 @@ const Intake = () => {
           <p>Type: In-person</p>
           <p>Chief Complaint: Cough</p>
           <p>Treatment: Prescribed cough syrup</p>
+        </div>
+      )}
+      {view === "care-navigator" && (
+        <div className="d-flex mb-3 mt-3">
+          <button onClick={sendCareOptions} className="btn primary-action">
+            Send Care Options
+          </button>
+          <button className="btn btn-danger ml-2">Cancel Order</button>
         </div>
       )}
     </>
