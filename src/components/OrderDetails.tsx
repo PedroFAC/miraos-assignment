@@ -6,7 +6,7 @@ const OrderDetails = () => {
         <div className="row">
           <div className="col-md-6">
             <p>
-              <strong>Status:</strong> Reviewing{" "}  
+              <strong>Status:</strong> Reviewing{" "}
               <span className="edit-button">(Edit)</span>
             </p>
             <p>
@@ -24,7 +24,7 @@ const OrderDetails = () => {
               <strong>Received:</strong> 01/11/2022
             </p>
             <p>
-              <strong>Intended Date:</strong> 01/12/2022{" "}
+              <strong>Intended Date:</strong> 01/12/2022
               <span className="edit-button">(Edit)</span>
             </p>
             <p>

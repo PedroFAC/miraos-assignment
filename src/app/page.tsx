@@ -1,7 +1,7 @@
 "use client";
-import OrderDetails from "./components/OrderDetails";
-import ViewContainer from "./components/ViewContainer";
-import { OrderProvider } from "./context";
+import OrderDetails from "../components/OrderDetails";
+import ViewContainer from "../components/ViewContainer";
+import { OrderProvider } from "../context/OrderContext";
 
 export default function Home() {
   return (

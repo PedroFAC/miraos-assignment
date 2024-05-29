@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useState } from "react";
-import data from "./data.json";
-import { Order, TreatmentPlan } from "./types";
+import data from "../app/data.json";
+import { Order, TreatmentPlan } from "../app/types";
 
 interface OrderContext {
   view: "provider" | "care-navigator";

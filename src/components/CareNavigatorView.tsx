@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { OrderContext } from "../context";
+import { OrderContext } from "../context/OrderContext";
 import Chat from "./Chat";
 import Intake from "./Intake";
 

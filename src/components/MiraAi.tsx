@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { OrderContext } from "../context";
+import { OrderContext } from "../context/OrderContext";
 
 const MiraAi = () => {
   const { orderData } = useContext(OrderContext);

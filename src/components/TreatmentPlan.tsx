@@ -5,7 +5,7 @@ import {
   useContext,
   useState,
 } from "react";
-import { OrderContext } from "../context";
+import { OrderContext } from "../context/OrderContext";
 
 const TreatmentPlan = () => {
   const { updateTreatmentPlan, treatmentPlan } = useContext(OrderContext);

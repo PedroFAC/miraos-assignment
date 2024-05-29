@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import CareNavigatorView from "./CareNavigatorView";
 import ProviderView from "./ProviderView";
-import { OrderContext } from "../context";
+import { OrderContext } from "../context/OrderContext";
 
 const ViewContainer = () => {
   const { view, toggleView } = useContext(OrderContext);
